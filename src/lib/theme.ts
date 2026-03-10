@@ -1,14 +1,20 @@
 import { DarkTheme, DefaultTheme, type Theme } from '@react-navigation/native';
- 
 export const THEME = {
   light: {
-    background: 'hsl(0 0% 100%)',
+    background: 'hsl(30, 100%, 97%)',
     foreground: 'hsl(0 0% 3.9%)',
     card: 'hsl(0 0% 100%)',
     cardForeground: 'hsl(0 0% 3.9%)',
     popover: 'hsl(0 0% 100%)',
     popoverForeground: 'hsl(0 0% 3.9%)',
-    primary: 'hsl(0 0% 9%)',
+    primary: 'hsl(17, 100%, 60%)',
+    primaryLight: 'hsl(20, 100%, 93%)',
+    primaryLighter: 'hsl(22, 100%, 89%)',
+    textPrimary: 'hsl(200, 18%, 20%)',
+    textSecondary: 'hsl(200, 10%, 46%)',
+    textMuted: 'hsl(200, 15%, 73%)',
+    progressBackground: 'hsl(200, 15%, 90%)',
+    white: 'hsl(0 0% 100%)',
     primaryForeground: 'hsl(0 0% 98%)',
     secondary: 'hsl(0 0% 96.1%)',
     secondaryForeground: 'hsl(0 0% 9%)',
@@ -20,6 +26,7 @@ export const THEME = {
     border: 'hsl(0 0% 89.8%)',
     input: 'hsl(0 0% 89.8%)',
     ring: 'hsl(0 0% 63%)',
+    placeholder: 'hsl(0 0% 53%)',
     radius: '0.625rem',
     chart1: 'hsl(12 76% 61%)',
     chart2: 'hsl(173 58% 39%)',
@@ -34,7 +41,14 @@ export const THEME = {
     cardForeground: 'hsl(0 0% 98%)',
     popover: 'hsl(0 0% 3.9%)',
     popoverForeground: 'hsl(0 0% 98%)',
-    primary: 'hsl(0 0% 98%)',
+    primary: 'hsl(17, 100%, 60%)',
+    primaryLight: 'hsl(17, 50%, 20%)',
+    primaryLighter: 'hsl(17, 40%, 15%)',
+    textPrimary: 'hsl(0 0% 98%)',
+    textSecondary: 'hsl(0 0% 63.9%)',
+    textMuted: 'hsl(0 0% 45.1%)',
+    progressBackground: 'hsl(0 0% 14.9%)',
+    white: 'hsl(0 0% 98%)',
     primaryForeground: 'hsl(0 0% 9%)',
     secondary: 'hsl(0 0% 14.9%)',
     secondaryForeground: 'hsl(0 0% 98%)',
@@ -46,6 +60,7 @@ export const THEME = {
     border: 'hsl(0 0% 14.9%)',
     input: 'hsl(0 0% 14.9%)',
     ring: 'hsl(300 0% 45%)',
+    placeholder: 'hsl(0 0% 44%)',
     radius: '0.625rem',
     chart1: 'hsl(220 70% 50%)',
     chart2: 'hsl(160 60% 45%)',
@@ -53,8 +68,8 @@ export const THEME = {
     chart4: 'hsl(280 65% 60%)',
     chart5: 'hsl(340 75% 55%)',
   },
-};
- 
+} as const;
+export type ThemeType = typeof THEME.light;
 export const NAV_THEME: Record<'light' | 'dark', Theme> = {
   light: {
     ...DefaultTheme,
