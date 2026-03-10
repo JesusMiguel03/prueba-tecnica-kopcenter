@@ -297,6 +297,13 @@ export function CreateProductDialog({
             <Button
               onPress={handleSubmit}
               disabled={isLoading}
+              style={{
+                shadowColor: theme.foreground,
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.15,
+                shadowRadius: 8,
+                elevation: 4,
+              }}
               className="w-full rounded-lg bg-primary">
               <Text className="text-base font-semibold text-primary-foreground">
                 {isLoading ? 'Creando...' : 'Crear Producto'}

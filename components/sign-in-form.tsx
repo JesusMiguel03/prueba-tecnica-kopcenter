@@ -101,7 +101,17 @@ export function SignInForm({ onSubmit, isLoading, errors }: SignInFormProps) {
               )}
             </View>
 
-            <Button className="w-full" onPress={handleSubmit} disabled={isLoading}>
+            <Button
+              className="w-full"
+              style={{
+                shadowColor: theme.foreground,
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.15,
+                shadowRadius: 8,
+                elevation: 4,
+              }}
+              onPress={handleSubmit}
+              disabled={isLoading}>
               <Text>{isLoading ? 'Cargando...' : 'Continuar'}</Text>
             </Button>
           </View>

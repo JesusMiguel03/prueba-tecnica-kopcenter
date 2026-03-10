@@ -6,6 +6,7 @@ import { Text } from './ui/text';
 type FABVariant = 'primary' | 'secondary' | 'destructive' | 'outline';
 
 import type { LucideIcon } from 'lucide-react-native';
+import useTheme from '@/src/hooks/useTheme';
 
 interface FABProps {
   onPress: () => void;
@@ -38,11 +39,20 @@ export function FAB({
   extended = false,
   disabled = false,
 }: FABProps) {
+  const theme = useTheme();
+
   return (
     <View className="absolute bottom-6 right-6">
       <Pressable
         onPress={onPress}
         disabled={disabled}
+        style={{
+          shadowColor: theme.foreground,
+          shadowOffset: { width: 0, height: 6 },
+          shadowOpacity: 0.2,
+          shadowRadius: 10,
+          elevation: 6,
+        }}
         className={`h-10 flex-row items-center justify-center gap-2 rounded-full shadow-sm ${extended ? 'px-4' : 'w-10'} ${variantStyles[variant]} ${disabled ? 'opacity-50' : 'active:opacity-80'} `}>
         <Icon as={IconComponent} size={18} className={iconColor[variant]} />
         {extended && label && (
