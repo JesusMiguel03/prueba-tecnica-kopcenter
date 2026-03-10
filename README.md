@@ -12,7 +12,7 @@ DuraznoStore es una aplicación móvil como presentación para la prueba de fron
 
 Descargar el repositorio
 ```
-git clone repo durazno-store-app
+git clone https://github.com/JesusMiguel03/prueba-tecnica-kopcenter durazno-store-app
 ```
 ```
 cd durazno-store-app
