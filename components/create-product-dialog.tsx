@@ -126,7 +126,6 @@ export function CreateProductDialog({
 
   const screenHeight = Dimensions.get('window').height;
   const maxModalHeight = screenHeight * 0.85;
-  const availableHeight = maxModalHeight - (keyboardHeight > 0 ? keyboardHeight - 20 : 0);
 
   return (
     <Modal
@@ -147,7 +146,7 @@ export function CreateProductDialog({
         <View
           className="rounded-t-3xl bg-background"
           style={{
-            maxHeight: availableHeight,
+            maxHeight: maxModalHeight,
           }}>
           <View className="flex-row items-center justify-between border-b border-border p-6">
             <View>
@@ -161,8 +160,8 @@ export function CreateProductDialog({
 
           <ScrollView
             ref={scrollViewRef}
-            style={{ maxHeight: availableHeight - 140 }}
-            contentContainerStyle={{ paddingBottom: keyboardHeight > 0 ? 20 : 0 }}
+            style={{ maxHeight: maxModalHeight - 140 }}
+            contentContainerStyle={{ paddingBottom: keyboardHeight > 0 ? keyboardHeight + 20 : 20 }}
             className="bg-background px-6"
             showsVerticalScrollIndicator
             keyboardShouldPersistTaps="handled"
